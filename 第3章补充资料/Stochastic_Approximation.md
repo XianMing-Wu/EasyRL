@@ -2,7 +2,7 @@
 
 # 随机逼近
 
-![](images/3%20-%20Chapter%206%20Stochastic%20Approximation/0.jpg)
+![](images/Stochastic_Approximation/0.jpg)
 
 **图 6.1：** 我们在本书中的位置。
 
@@ -95,7 +95,7 @@ $$
 
 其中 $\eta \in \mathbb{R}$ 是观测误差，可能服从也可能不服从高斯分布。总之，这是一个黑箱系统，只有输入 $w$ 和带噪声的输出 $\tilde{g}(w, \eta)$ 是已知的（见图6.2）。我们的目标是使用 $w$ 和 $\tilde{g}$ 来求解 $g(w) = 0$。
 
-![](images/3 - Chapter 6 Stochastic Approximation/1.jpg)  
+![](images/Stochastic_Approximation/1.jpg)  
 **图6.2**：通过 $w$ 和 $\tilde{g}$ 求解 $g(w) = 0$ 的问题示意图。
 
 能够求解 $g(w) = 0$ 的RM算法为：
@@ -106,7 +106,7 @@ $$
 
 其中 $w_k$ 是第 $k$ 次对根的估计，$\tilde{g}(w_k, \eta_k)$ 是第 $k$ 次带噪声的观测值，$a_k$ 是一个正系数。可以看出，RM算法不需要关于函数的任何信息，只需要输入和输出。
 
-![](images/3 - Chapter 6 Stochastic Approximation/2.jpg)  
+![](images/Stochastic_Approximation/2.jpg)  
 **图6.3**：RM算法的说明性示例。
 
 为了说明RM算法，考虑一个例子，其中 $g(w) = w^3 - 5$。真实的根是 $5^{1/3} \approx 1.71$。现在，假设我们只能观测到输入 $w$ 和输出 $\tilde{g}(w) = g(w) + \eta$，其中 $\eta$ 是独立同分布的，服从均值为零、标准差为 $1$ 的标准正态分布。初始猜测为 $w_1 = 0$，系数为 $a_k = 1/k$。$w_k$ 的演化过程如图6.3所示。即使观测值被噪声 $\eta_k$ 干扰，估计值 $w_k$ 仍然能够收敛到真实的根。注意，对于 $g(w) = w^3 - 5$ 这个特定函数，必须适当选择初始猜测 $w_1$ 以确保收敛。在下面的小节中，我们将给出RM算法对于任何初始猜测都能收敛的条件。
@@ -125,7 +125,7 @@ $$
 
 在任一情况下，$w_{k+1}$ 都比 $w_k$ 更接近 $w^{*}$。因此，直观上 $w_k$ 会收敛到 $w^{*}$。
 
-![](images/3 - Chapter 6 Stochastic Approximation/3.jpg)
+![](images/Stochastic_Approximation/3.jpg)
 图6.4：说明RM算法收敛性的一个例子。
 
 上面的例子很简单，因为假设观测误差为零。在存在随机观测误差的情况下分析收敛性则非易事。下面给出一个严格的收敛结果。

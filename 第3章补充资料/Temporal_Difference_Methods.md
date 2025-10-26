@@ -2,7 +2,7 @@
 
 # 时序差分方法
 
-![](images/3%20-%20Chapter%207%20Temporal-Difference%20Methods/0.jpg)  
+![](images/Temporal_Difference_Methods/0.jpg)  
 *图 7.1：我们在本书中的位置*
 
 本章介绍强化学习中的时序差分（TD）方法。与蒙特卡洛（MC）学习类似，TD学习也是无模型的，但由于其增量形式而具有一些优势。通过第6章的铺垫，读者在看到TD学习算法时不会感到陌生。实际上，TD学习算法可以视为求解贝尔曼方程或贝尔曼最优方程的特殊随机算法。
@@ -385,7 +385,7 @@ Sarsa 算法是否收敛？由于 Sarsa 是 (7.1) 中 TD 算法的动作值版�
 
 此外，对所有$t$，α_t(s,a) = 0.1，且ε = 0.1。动作值的初始猜测为对所有(s,a)，q₀(s,a) = 0。初始策略具有均匀分布：对所有s,a，π₀(a|s) = 0.2。
 
-![](images/3 - Chapter 7 Temporal-Difference Methods/1.jpg)
+![](images/Temporal_Difference_Methods/1.jpg)
 
 **图7.2**：演示Sarsa的示例。所有回合从左上角状态开始，在到达目标状态（蓝色单元格）时终止。目标是找到从起始状态到目标状态的最优路径。奖励设置为$r_{\mathrm{目标}} = 0$，$r_{\mathrm{禁止}} = r_{\mathrm{边界}} = -10$，以及$r_{\mathrm{其他}} = -1$。学习率α = 0.1，ε值为0.1。左图显示了算法获得的最终策略。右图显示了每个回合的总奖励和长度。
 
@@ -675,7 +675,7 @@ $$
    - 如果 $a = \arg \max_{a} q_{t+1}(s_{t}, a)$，则 $\pi_{T,t+1}(a|s_{t}) = 1$
    - 否则 $\pi_{T,t+1}(a|s_{t}) = 0$
 
-![](images/3 - Chapter 7 Temporal-Difference Methods/2.jpg)
+![](images/Temporal_Difference_Methods/2.jpg)
 
 **图 7.3：** Q-learning 的演示示例。所有回合都从左上角状态开始，并在到达目标状态后终止。目标是找到从起始状态到目标状态的最优路径。奖励设置为 $r_{\mathrm{target}} = 0$，$r_{\mathrm{forbidden}} = r_{\mathrm{boundary}} = -10$，以及 $r_{\mathrm{other}} = -1$。学习率为 $\alpha = 0.1$，$\epsilon$ 值为 0.1。左图显示了算法获得的最终策略。右图显示了每个回合的总奖励和长度。
 
@@ -734,10 +734,10 @@ $$
 q_{t+1}(s_t, a_t) = q_t(s_t, a_t) - \alpha_t(s_t, a_t)[q_t(s_t, a_t) - \bar{q}_t],
 $$
 
-![](images/3 - Chapter 7 Temporal-Difference Methods/3.jpg)
+![](images/Temporal_Difference_Methods/3.jpg)
 图 7.4：通过 Q-learning 展示离策略学习的示例。最优策略和最优状态值分别显示在 (a) 和 (b) 中。行为策略和生成的轨迹分别显示在 (c) 和 (d) 中。估计的策略和估计误差的演变分别显示在 (e) 和 (f) 中。具有不同初始值的情况显示在 (g) 和 (h) 中。
 
-![](images/3 - Chapter 7 Temporal-Difference Methods/4.jpg)
+![](images/Temporal_Difference_Methods/4.jpg)
 图 7.5：当行为策略不具备探索性时，Q-learning 的性能会下降。左列中的图显示了行为策略。中间列中的图显示了遵循相应行为策略生成的轨迹。每个示例中的轨迹有 100,000 步。右列中的图显示了估计状态值的均方根误差的演变。
 
 | 算法 | 公式 (7.20) 中 TD 目标 $\bar{q}_t$ 的表达式 |
